@@ -1,13 +1,26 @@
 import random
 
-get_lowerbound = int(input("Enter the lowerbound: "))
-get_upperbound = int(input("Enter the upperbound: "))
+
+while True:
+    try:
+        get_lowerbound = int(input("Enter the lowerbound: "))
+        get_upperbound = int(input("Enter the upperbound: "))
+        break
+    except:
+        continue
+
 random_number = random.randint(get_lowerbound,get_upperbound)
 guess_counter = 0
+print(random_number)
 
-for guess in range(7):
-    guess_number = int(input("Enter a number: "))
+while guess_counter <= 7:
     guess_counter = guess_counter+1
+    while True:
+        try:
+            guess_number = int(input("Enter a number: "))
+            break
+        except:
+            continue
     
     
     if guess_number == random_number:
